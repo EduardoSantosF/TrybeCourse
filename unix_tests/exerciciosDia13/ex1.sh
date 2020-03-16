@@ -1,0 +1,1 @@
+echo "Shell Script é chato JS é demais"
