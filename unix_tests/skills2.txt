@@ -1,5 +1,0 @@
-Bash
-Dorminhoco++
-Internet
-ProGamer
-Unix
