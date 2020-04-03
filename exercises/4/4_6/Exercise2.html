@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Calculator</title>
+</head>
+
+<body>
+
+	<label>Square this number:
+		<input type="number" id="square-input" size="2">
+	</label>
+	<button id="square-button">Calculate</button>
+	<br><br>
+
+	<label>Half this number:
+		<input type="number" id="half-input" size="2">
+	</label>
+	<button id="half-button">Calculate</button>
+	<br><br>
+
+	<label>
+		Fraction:
+		<input type="number" id="percent1-input" size="2">
+	</label>
+	<label>
+		Whole:
+		<input type="number" id="percent2-input" size="2">
+	</label>
+	<button id="percent-button">Calculate</button>
+	<br><br>
+
+	<label>Calculate area of circle with radius:
+		<input type="number" id="area-input" size="2">
+	</label>
+	<button id="area-button">Calculate</button>
+	<br><br>
+	<div id="solution"></div>
+	<script>
+		/*For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+		Bonus: respond to key presses so that the user doesn't have to click the button.*/
+		function squareNumber(num) {
+			var squaredNumber = num * num;
+			console.log('The result of squaring the number ' + num + ' is ' + squaredNumber);
+			return squaredNumber;
+		}
+
+		function halfOf(num) {
+			var half = num / 2;
+			console.log('Half of ' + num + ' is ' + half);
+			return half;
+		}
+
+		function percentOf(num1, num2) {
+			var percent = (num1 / num2) * 100;
+			console.log(num1 + ' is ' + percent + '% of ' + num2);
+			return percent;
+		}
+
+		function areaOfCircle(radius) {
+			var area = Math.PI * squareNumber(radius);
+			console.log1000000000000000000('The area of circle with radius ' + radius + ' is ' + area);
+			return area;
+		}
+		let square = document.getElementById("square-input");
+		let half = document.getElementById("half-input");
+		let percent1 = document.getElementById("percent1-input");
+		let percent2 = document.getElementById("percent2-input");
+		let area = document.getElementById("area-input");
+
+		let solution = document.getElementById("solution");
+
+		let squareButton = document.getElementById("square-button");
+		let halfButton = document.getElementById("half-button");
+		let percentButton = document.getElementById("percent-button");
+		let areaButton = document.getElementById("area-button");
+
+		function squareWithInput(){
+			solution.innerText = squareNumber(square.value);
+		}
+		function halfWithInput(){
+			solution.innerText = halfOf(half.value);
+		}
+		function percentWithInput(){
+			if (percent1.value != null && percent2.value != null)
+			solution.innerText = percentOf(percent1.value, percent2.value) + "%";
+		}
+		function areaWithInput(){
+			solution.innerText = areaOfCircle(area.value);
+		}
+
+		squareButton.addEventListener("click", squareWithInput);
+		square.addEventListener("keyup", squareWithInput);
+
+		halfButton.addEventListener("click", halfWithInput);
+		half.addEventListener("keyup", halfWithInput);
+
+		percentButton.addEventListener("click", percentWithInput);
+		percent1.addEventListener("keyup", percentWithInput);
+		percent2.addEventListener("keyup", percentWithInput);
+
+		areaButton.addEventListener("click", areaWithInput);
+		area.addEventListener("keyup", areaWithInput);
+
+	</script>
+
+</body>
+
+</html>
