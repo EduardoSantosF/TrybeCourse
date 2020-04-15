@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,42 @@
   <script src="script.js"></script>
   <title>Forms Exercise</title>
 </head>
+
 <body>
-  
+  <form action="">
+    <fieldset>
+      <div>
+        <label for="name">Name:</label>
+        <input required maxlength="40" id="name" type="text">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input required maxlength="50" type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$">
+      </div>
+      <div>
+        <label for="cpf">CPF:</label>
+        <input id="cpf" required maxlength="11" type="text">
+      </div>
+      <div>
+        <label for="endereco">Endereço:</label>
+        <input required maxlength="200" type="text" id="endereco">
+      </div>
+      <div>
+        <label for="cidade">Cidade:</label>
+        <input required maxlength="28" type="text" class="cidade">
+      </div>
+      <div>
+        <label for="estado">Estado:</label>
+        <select required id="estado"></select>
+      </div>
+      <div>
+        <input type="radio" name="moradia" id="casa">
+        <label required for="casa">Casa</label>
+        <input type="radio" name="moradia" id="apt">
+        <label required for="apt">Apartamento</label>
+      </div>
+    </fieldset>
+  </form>
 </body>
+
 </html>
