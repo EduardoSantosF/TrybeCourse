@@ -12,13 +12,15 @@
 <body>
   <form action="">
     <fieldset>
+      <legend>Dados Pessoais</legend>
       <div>
         <label for="name">Name:</label>
         <input required maxlength="40" id="name" type="text">
       </div>
       <div>
         <label for="email">Email:</label>
-        <input required maxlength="50" type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$">
+        <input required maxlength="50" type="text" 
+          pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
       </div>
       <div>
         <label for="cpf">CPF:</label>
@@ -34,15 +36,42 @@
       </div>
       <div>
         <label for="estado">Estado:</label>
-        <select required id="estado"></select>
+        <select required id="estado">
+          <option selected value="a">aaa</option>
+        </select>
       </div>
       <div>
-        <input type="radio" name="moradia" id="casa">
-        <label required for="casa">Casa</label>
-        <input type="radio" name="moradia" id="apt">
-        <label required for="apt">Apartamento</label>
+        <input required type="radio" name="moradia" id="casa">
+        <label for="casa">Casa</label>
+        <input required type="radio" name="moradia" id="apt">
+        <label for="apt">Apartamento</label>
       </div>
     </fieldset>
+    <fieldset>
+      <legend>Último Emprego</legend>
+      <div>
+        <label for="resumocurriculo">Resumo do currículo:</label><br>
+        <textarea required id="resumocurriculo" cols="100" rows="10"></textarea>
+      </div>
+      <div>
+        <label for="cargo">Cargo:</label>
+        <input required maxlength="40" type="text" id="cargo">
+      </div>
+      <div>
+        <label for="descricao">Descrição do Cargo:</label>
+        <input required maxlength="500" type="text" id="descricao">
+      </div>
+      <div>
+        <label for="datainicio">Data de Início:</label>
+        <input 
+          title="Formato Válido: DD/MM/AAAA"
+          required
+          type="text" 
+          id="datainicio" 
+          pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
+      </div>
+    </fieldset>
+    <button type="submit">Enviar</button>
   </form>
 </body>
 
