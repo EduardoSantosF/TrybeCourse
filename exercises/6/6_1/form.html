@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form action="">
+  <form action="" id="form">
     <fieldset>
       <legend>Dados Pessoais</legend>
       <div>
@@ -41,6 +41,7 @@
         </select>
       </div>
       <div>
+        <p>Mora em:</p>
         <input required type="radio" name="moradia" id="casa">
         <label for="casa">Casa</label>
         <input required type="radio" name="moradia" id="apt">
@@ -71,7 +72,7 @@
           pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
       </div>
     </fieldset>
-    <button type="submit">Enviar</button>
+    <button type="submit" id="submit-button">Enviar</button>
   </form>
 </body>
 
