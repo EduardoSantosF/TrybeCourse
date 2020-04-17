@@ -11,69 +11,91 @@
 
 <body>
   <form action="" id="form">
-    <fieldset>
-      <legend>Dados Pessoais</legend>
+    <div>
+      <p>Dados Pessoais</p>
       <div>
-        <label for="name">Name:</label>
-        <input required maxlength="40" id="name" type="text">
+        <label>
+          Name:
+          <input name="nome" required maxlength="40" type="text">
+        </label>
       </div>
       <div>
-        <label for="email">Email:</label>
-        <input required maxlength="50" type="text" 
-          pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <label>
+          Email:
+          <input name="email" required maxlength="50" type="text"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        </label>
       </div>
       <div>
-        <label for="cpf">CPF:</label>
-        <input id="cpf" required maxlength="11" type="text">
+        <label>
+          CPF:
+          <input name="cpf" required maxlength="11" type="text">
+        </label>
       </div>
       <div>
-        <label for="endereco">Endereço:</label>
-        <input required maxlength="200" type="text" id="endereco">
+        <label>
+          Endereço:
+          <input name="endereco" required maxlength="200" type="text">
+        </label>
       </div>
       <div>
-        <label for="cidade">Cidade:</label>
-        <input required maxlength="28" type="text" class="cidade">
+        <label>
+          Cidade:
+          <input name="cidade" required maxlength="28" type="text">
+        </label>
       </div>
       <div>
-        <label for="estado">Estado:</label>
-        <select required id="estado">
-          <option selected value="a">aaa</option>
-        </select>
+        <label>
+          Estado:
+          <select name="estado" required id="estados">
+            <option>Selecione</option>
+          </select>
+        </label>
       </div>
       <div>
         <p>Mora em:</p>
-        <input required type="radio" name="moradia" id="casa">
-        <label for="casa">Casa</label>
-        <input required type="radio" name="moradia" id="apt">
-        <label for="apt">Apartamento</label>
+        <label>
+          <input name="moradia" value="casa" required type="radio">
+          Casa
+        </label>
+        <label>
+          <input name="moradia" value="apartamento" required type="radio">
+          Apartamento
+        </label>
       </div>
-    </fieldset>
-    <fieldset>
-      <legend>Último Emprego</legend>
+    </div>
+    <div>
+      <p>Último Emprego</p>
       <div>
-        <label for="resumocurriculo">Resumo do currículo:</label><br>
-        <textarea required id="resumocurriculo" cols="100" rows="10"></textarea>
-      </div>
-      <div>
-        <label for="cargo">Cargo:</label>
-        <input required maxlength="40" type="text" id="cargo">
-      </div>
-      <div>
-        <label for="descricao">Descrição do Cargo:</label>
-        <input required maxlength="500" type="text" id="descricao">
+        <label>
+          Resumo do currículo:
+          <textarea name="resumo" required cols="100" rows="10"></textarea>
+        </label>
       </div>
       <div>
-        <label for="datainicio">Data de Início:</label>
-        <input 
-          title="Formato Válido: DD/MM/AAAA"
-          required
-          type="text" 
-          id="datainicio" 
-          pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
+        <label>
+          Cargo:
+          <input name="cargo" required maxlength="40" type="text">
+        </label>
       </div>
-    </fieldset>
+      <div>
+        <label>
+          Descrição do Cargo:
+          <input name="descricao" required maxlength="500" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Data de Início:
+          <input name="data" title="Formato Válido: DD/MM/AAAA" required type="text"
+            pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
+        </label>
+      </div>
+    </div>
     <button type="submit" id="submit-button">Enviar</button>
+    <button type="button" id="cancel-button">Cancelar</button>
   </form>
+  <div id="result"></div>
 </body>
 
 </html>
