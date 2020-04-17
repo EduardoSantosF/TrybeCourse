@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <title>Forms Exercise</title>
+</head>
+
+<body>
+  <form action="" id="form">
+    <div>
+      <p>Dados Pessoais</p>
+      <div>
+        <label>
+          Name:
+          <input name="nome" required maxlength="40" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Email:
+          <input name="email" required maxlength="50" type="text"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        </label>
+      </div>
+      <div>
+        <label>
+          CPF:
+          <input name="cpf" required maxlength="11" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Endereço:
+          <input name="endereco" required maxlength="200" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Cidade:
+          <input name="cidade" required maxlength="28" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Estado:
+          <select name="estado" required id="estados">
+            <option>Selecione</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <p>Mora em:</p>
+        <label>
+          <input name="moradia" value="casa" required type="radio">
+          Casa
+        </label>
+        <label>
+          <input name="moradia" value="apartamento" required type="radio">
+          Apartamento
+        </label>
+      </div>
+    </div>
+    <div>
+      <p>Último Emprego</p>
+      <div>
+        <label>
+          Resumo do currículo:
+          <textarea name="resumo" required cols="100" rows="10"></textarea>
+        </label>
+      </div>
+      <div>
+        <label>
+          Cargo:
+          <input name="cargo" required maxlength="40" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Descrição do Cargo:
+          <input name="descricao" required maxlength="500" type="text">
+        </label>
+      </div>
+      <div>
+        <label>
+          Data de Início:
+          <input name="data" title="Formato Válido: DD/MM/AAAA" required type="text"
+            pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
+        </label>
+      </div>
+    </div>
+    <button type="submit" id="submit-button">Enviar</button>
+    <button type="button" id="cancel-button">Cancelar</button>
+  </form>
+  <div id="result"></div>
+</body>
+
+</html>
