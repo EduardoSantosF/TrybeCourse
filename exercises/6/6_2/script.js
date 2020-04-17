@@ -34,11 +34,11 @@ function cancel() {
   const elements = form.elements;
   for (let i = 0; i < form.elements.length - 2; i += 1) {
     const elemento = elements[i];
-    if (elemento.type === 'text' || elemento.type === "textarea"){
+    if (elemento.type === 'text' || elemento.type === "textarea") {
       elemento.value = null;
-    }else if (elemento.type === 'radio' && elemento.checked){
+    } else if (elemento.type === 'radio' && elemento.checked) {
       elemento.checked = false;
-    }else if (elemento.id === "estados"){
+    } else if (elemento.id === "estados") {
       elemento.selectedIndex = 0;
       console.log(elemento.type)
     }
@@ -49,9 +49,7 @@ function cancel() {
 function submitForm(event) {
   event.preventDefault();
   const elements = event.target.elements;
-  if (result.hasChildElements) {
-    result.innerHTML = null;
-  }
+  result.innerHTML = null;
   for (let i = 0; i < elements.length - 2; i += 1) {
     const newElement = document.createElement('p');
     if (elements[i].type === 'radio' && !elements[i].checked) {
@@ -73,13 +71,14 @@ function setEstados() {
   }
 }
 
-function setVariables(){
+function setVariables() {
   form = document.getElementById('form');
 }
 
 function setEvents() {
   form.addEventListener('submit', submitForm);
   document.getElementById('cancel-button').addEventListener('click', cancel);
+  document.getElementById('data').DatePickerX.init();
 }
 
 window.onload = function () {

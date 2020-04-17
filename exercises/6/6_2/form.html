@@ -4,97 +4,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lib/css/materialize.min.css">
+  <link rel="stylesheet" href="lib/css/DatePickerX.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="lib/js/materialize.min.js"></script>
+  <script src="lib/js/DatePickerX.min.js"></script>
   <script src="script.js"></script>
   <title>Forms Exercise</title>
 </head>
 
 <body>
-  <form action="" id="form">
-    <div>
-      <p>Dados Pessoais</p>
-      <div>
-        <label>
-          Name:
-          <input name="nome" required maxlength="40" type="text">
-        </label>
+  <div class="row">
+    <form class="col s12" action="" id="form">
+      <h6>Dados Pessoais</h6>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="nome">Name:</label>
+          <input id="nome" name="nome" required maxlength="40" type="text">
+        </div>
       </div>
-      <div>
-        <label>
-          Email:
-          <input name="email" required maxlength="50" type="text"
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="email">Email:</label>
+          <input id="email" name="email" required maxlength="50" type="text"
             pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-        </label>
+        </div>
+        <div class="input-field col s6">
+          <label id="cpf">CPF:</label>
+          <input id="cpf" name="cpf" required maxlength="11" type="text">
+        </div>
       </div>
-      <div>
-        <label>
-          CPF:
-          <input name="cpf" required maxlength="11" type="text">
-        </label>
-      </div>
-      <div>
-        <label>
-          Endereço:
-          <input name="endereco" required maxlength="200" type="text">
-        </label>
-      </div>
-      <div>
-        <label>
-          Cidade:
-          <input name="cidade" required maxlength="28" type="text">
-        </label>
-      </div>
-      <div>
-        <label>
-          Estado:
-          <select name="estado" required id="estados">
-            <option>Selecione</option>
+      <div class="row">
+        <div class="input-field col s4">
+          <label for="endereco">Endereço:</label>
+          <input id="endereco" name="endereco" required maxlength="200" type="text">
+        </div>
+        <div class="input-field col s4">
+          <label for="cidade">Cidade:</label>
+          <input id="cidade" name="cidade" required maxlength="28" type="text">
+        </div>
+        <div class="input-field col s4">
+          <label for="estados">Estado:</label><br>
+          <select class="browser-default" id="estados" name="estado" required>
+            <option selected disabled>Selecione</option>
           </select>
-        </label>
+        </div>
       </div>
-      <div>
-        <p>Mora em:</p>
-        <label>
-          <input name="moradia" value="casa" required type="radio">
-          Casa
-        </label>
-        <label>
-          <input name="moradia" value="apartamento" required type="radio">
-          Apartamento
-        </label>
+      <!-- <h6>Mora em:</h6>
+      <div class="row">
+        <div class="input-field col s12">
+          <p>
+            <input id="moradia1" class="with-gap" name="moradia" value="casa" required type="radio">
+            <label for="moradia1">Casa</label></p>
+          <p>
+            <input id="moradia2" class="with-gap" name="moradia" value="apartamento" required type="radio">
+            <label for="moradia2">Apartamento</label>
+          </p>
+        </div>
+      </div> -->
+      <h6>Último Emprego</h6>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="resumo">Resumo do currículo:</label>
+          <textarea id="resumo" class="materialize-textarea" name="resumo" required cols="100" rows="10"></textarea>
+        </div>
       </div>
-    </div>
-    <div>
-      <p>Último Emprego</p>
-      <div>
-        <label>
-          Resumo do currículo:
-          <textarea name="resumo" required cols="100" rows="10"></textarea>
-        </label>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="cargo">Cargo:</label>
+          <input id="cargo" name="cargo" required maxlength="40" type="text">
+        </div>
+        <div class="input-field col s6">
+          <label for="data">Data de Início:</label>
+          <input id="data" name="data" title="Formato Válido: DD/MM/AAAA" required type="text">
+            <!-- pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$"> -->
+        </div>
       </div>
-      <div>
-        <label>
-          Cargo:
-          <input name="cargo" required maxlength="40" type="text">
-        </label>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="descricao">Descrição do Cargo:</label>
+          <input id="descricao" name="descricao" required maxlength="500" type="text">
+        </div>
       </div>
-      <div>
-        <label>
-          Descrição do Cargo:
-          <input name="descricao" required maxlength="500" type="text">
-        </label>
-      </div>
-      <div>
-        <label>
-          Data de Início:
-          <input name="data" title="Formato Válido: DD/MM/AAAA" required type="text"
-            pattern="^([1-9]|[0-2][0-9]|3[01]){1,2}/([1-9]|0[0-9]|1[0-2]{1,2})/(\d{4})$">
-        </label>
-      </div>
-    </div>
-    <button type="submit" id="submit-button">Enviar</button>
-    <button type="button" id="cancel-button">Cancelar</button>
-  </form>
+      <button class="btn waves-effect waves-light" type="submit" id="submit-button">Enviar</button>
+      <button class="btn waves-effect waves-light red" type="button" id="cancel-button">Cancelar</button>
+    </form>
+  </div>
   <div id="result"></div>
 </body>
 
