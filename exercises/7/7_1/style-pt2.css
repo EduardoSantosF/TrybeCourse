@@ -26,34 +26,21 @@
   display: flex;
 }
 
+@media (orientation: landscape) {
+
+  .topo {
+    background-color: rgb(44, 44, 44);
+  }
+
+  .centro {
+    background-color: rgb(73, 73, 73);
+  }
+}
+
 .colunas {
   width: 50%;
   height: 30%;
   background-color: #999;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
-}
-
-@media screen and (min-width:320px) and (max-width:568px){
-  .centro {
-    width: 100%;
-  }
-
-  .topo {
-    background-color: #ff0;
-  }
-
-  .topo h1 {
-    color: #f00;
-  }
-
-  .content {
-    display: inline;
-  }
-
-  .colunas {
-    width: 100%;
-    margin-top: 5px;
-    background-color: #f00;
-  }
 }

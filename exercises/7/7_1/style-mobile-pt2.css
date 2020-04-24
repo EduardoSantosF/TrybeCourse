@@ -1,0 +1,21 @@
+.centro {
+  width: 100%;
+}
+
+.topo {
+  background-color: #ff0;
+}
+
+.topo h1 {
+  color: #f00;
+}
+
+.content {
+  display: inline;
+}
+
+.colunas {
+  width: 100%;
+  margin-top: 5px;
+  background-color: #f00;
+}
