@@ -1,0 +1,123 @@
+#exercise-1 {
+  animation: leftToRight 3s linear 1s;
+}
+
+#exercise-2 {
+  animation: leftToRight 2s 2s linear forwards;
+}
+
+#exercise-3 {
+  animation: leftToRight 1s linear 1s 2 alternate;
+}
+
+#exercise-4 {
+  animation: leftToRight 5s linear paused;
+}
+
+#exercise-4:hover {
+  animation-play-state: running;
+}
+
+#exercise-5 {
+  animation: leftToRight 5s linear paused;
+}
+
+#section-5:hover #exercise-5 {
+  animation-play-state: running;
+}
+
+#exercise-6-square {
+  animation: leftToRight 5s linear reverse paused;
+}
+
+#exercise-6-square:hover {
+  animation-play-state: running;
+}
+
+#exercise-7 {
+  animation: sizeMinToMax 10s linear infinite alternate;
+}
+
+#exercise-8 {
+  animation: colorToYellow 4s linear;
+}
+
+#exercise-9 {
+  animation: colorToYellowBlueGreen 4s linear infinite alternate;
+}
+
+#exercise-10 {
+  animation: colorToYellowBlueGreen 4s linear infinite alternate, sizeMinToMax 4s linear infinite alternate;
+}
+
+#exercise-11_1, 
+#exercise-11_2,
+#exercise-11_3,
+#exercise-11_4,
+#exercise-11_5 {
+  animation: leftToRight 2s 3s infinite alternate;
+}
+
+#exercise-11_1 {
+  animation-timing-function: linear;
+}
+
+#exercise-11_2 {
+  animation-timing-function: ease;
+}
+
+#exercise-11_3 {
+  animation-timing-function: ease-in;
+}
+
+#exercise-11_4 {
+  animation-timing-function: ease-out;
+}
+
+#exercise-11_5 {
+  animation-timing-function: ease-in-out;
+}
+
+#exercise-12 {
+  animation: fadeOut 1s linear forwards paused;
+}
+
+#exercise-12:active {
+  animation-play-state: running;
+}
+
+@keyframes leftToRight {
+  100% {
+    margin-left: 96%;
+  }
+}
+
+@keyframes sizeMinToMax {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes colorToYellow {
+  100% {
+    background-color: yellow;
+  }
+}
+
+@keyframes colorToYellowBlueGreen {
+  33% {
+    background-color: yellow;
+  }
+  66% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+  }
+}
