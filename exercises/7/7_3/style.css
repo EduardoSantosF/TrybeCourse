@@ -1,0 +1,29 @@
+body {
+  width: 740px;
+}
+
+img {
+  width: 100px;
+  padding: 5px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rotate:hover {
+  transform: rotate(360deg);
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}
+
+.flipX:hover {
+  transform: rotateX(360deg);
+}
+
+.flipY:hover {
+  transform: rotateY(360deg);
+}
