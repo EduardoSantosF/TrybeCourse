@@ -1,6 +1,12 @@
 const assert = require('assert');
 // escreva a função addOne para passar nos testes abaixo:
-
+function addOne(arr) {
+  const copy = Object.assign([], arr);
+  for (let i = 0; i < copy.length; i++) {
+    copy[i] += 1;
+  }
+  return copy;
+}
 //
 const myArray = [31, 57, 12, 5];
 const unchanged = [31, 57, 12, 5];
