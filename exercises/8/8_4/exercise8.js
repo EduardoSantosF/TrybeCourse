@@ -1,11 +1,6 @@
 function secondThirdSmallest(array) {
   let results = []
-  array.sort((x, y) => {
-    if (x > y) {
-      return 1;
-    }
-    return 0;
-  });
+  array.sort((x, y) => x - y);
   results = [array[1], array[2]];
   return results;
 };
