@@ -1,7 +1,7 @@
 const removeVowels = (word) => {
   const characters = word.split('');
-  const results = [];
-
+  let results = '';
+  let numb = 1;
   for (let i = 0; i < characters.length; i += 1) {
     if (
       characters[i] === 'a' ||
@@ -10,15 +10,17 @@ const removeVowels = (word) => {
       characters[i] === 'e' ||
       characters[i] === 'u'
     ) {
-      results.push(characters[i]);
-    } else {
-      results.push('_');
+      results += numb;
+      numb++;
+    }
+    else{
+      results += characters[i];
     }
   }
   return results;
 };
 
-
+const assert = require('assert');
 const parameter = 'Dayane';
 const result = 'D1y2n3';
 /*
@@ -28,3 +30,5 @@ const result = 'D1y2n3';
   Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
   a função aos poucos:
 */
+
+assert.equal(removeVowels(parameter), result);
