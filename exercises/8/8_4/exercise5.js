@@ -1,10 +1,10 @@
 const greetPeople = (people) => {
   let greeting = 'Hello ';
-
+  const result = [];
   for (const person in people) {
-    greeting += people[person];
+    result.push(greeting + people[person]);
   }
-  return greeting;
+  return result;
 };
 
 const assert = require('assert');
@@ -17,3 +17,4 @@ const result = ['Hello Irina', 'Hello Ashleigh', 'Hello Elsa'];
   Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
   a função aos poucos:
 */
+assert.deepEqual(greetPeople(parameter), result);
