@@ -1,13 +1,13 @@
 const greaterThanTen = (array) => {
-  let results = 0;
+  const results = [];
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] > 10) {
-      results += array[i];
+      results.push(array[i]);
     }
   }
   return results;
 };
-
+const assert = require('assert');
 const parameter = [4, 10, 32, 9, 21];
 const result = [32, 21];
 /*
@@ -17,3 +17,4 @@ const result = [32, 21];
   Lembre-se: testes pequenos e numerosos! Escreva um por vez e vá corrigindo
   a função aos poucos:
 */
+assert.deepEqual(greaterThanTen(parameter), result);
