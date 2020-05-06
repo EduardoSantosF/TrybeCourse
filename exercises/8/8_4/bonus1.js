@@ -1,5 +1,12 @@
 const assert = require('assert');
 // escreva a função factorial para passar nos testes abaixo:
+function factorial(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
 
 const in1 = 5;
 const exp1 = 120;
