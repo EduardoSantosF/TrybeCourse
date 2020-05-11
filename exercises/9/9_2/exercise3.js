@@ -71,8 +71,8 @@ const expected_result = [
 
 function oldBooks() {
   // escreva seu código aqui
-  return books.filter((book) => 2020 - book.releaseYear > 60)
-    .map((book) => book.name);
+  return books.filter(book => 2020 - book.releaseYear > 60)
+    .map(book => book.name);
 }
 
 assert.deepEqual(oldBooks(), expected_result);
