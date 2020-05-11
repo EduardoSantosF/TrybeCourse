@@ -63,20 +63,17 @@ const books = [
   },
 ];
 
-const expected_result = {
-  author: {
-    birthYear: 1948,
-    name: 'George R. R. Martin'
-  },
-  genre: 'Fantasia',
-  id: 1,
-  name: 'As Crônicas de Gelo e Fogo',
-  releaseYear: 1991
-};
+const expected_result = [
+  'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
+  'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
+  'Fundação - Ficção Científica - Isaac Asimov',
+  'Duna - Ficção Científica - Frank Herbert',
+  'A Coisa - Terror - Stephen King',
+  'O Chamado de Cthulhu - Terror - H. P. Lovecraft'
+];
 
-function longestNamedBook() {
-  // escreva seu código aqui
-  return books.reduce((acc, curr) => acc.name.length < curr.name.length ? curr : acc);
+function formatedBookNames() {
+  return books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
 }
 
-assert.deepEqual(longestNamedBook(), expected_result);
+assert.deepEqual(formatedBookNames(), expected_result);
