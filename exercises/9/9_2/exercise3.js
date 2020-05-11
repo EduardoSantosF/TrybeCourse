@@ -63,10 +63,16 @@ const books = [
   },
 ];
 
+const expected_result = [
+  'O Senhor dos Anéis',
+  'Fundação',
+  'O Chamado de Cthulhu'
+]
 
-function allNames() {
-  return `${books.reduce((acc, book, index) => 
-    index === 0 ? acc += book.author.name : acc += `, ${book.author.name}`, 'Nomes: ')}.`;
+function oldBooks() {
+  // escreva seu código aqui
+  return books.filter((book) => 2020 - book.releaseYear > 60)
+    .map((book) => book.name);
 }
 
-assert.deepEqual(allNames(), "Nomes: George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.");
+assert.deepEqual(oldBooks(), expected_result);
