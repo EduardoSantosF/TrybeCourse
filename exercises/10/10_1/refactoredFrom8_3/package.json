@@ -1,0 +1,11 @@
+{
+  "name": "refactoredfrom8_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercise1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
