@@ -19,8 +19,20 @@ const promise = new Promise((resolve, reject) => {
   soma < 8000 ? resolve(soma) : reject();
 });
 
-promise
-  .then(divided)
-  .then((result) => console.log(somaArr(result)))
-  .catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!”'));
+const onError = () => console.log('É mais de oito mil! Essa promise deve estar quebrada!”');
 
+// promise
+//   .then(divided)
+//   .then((result) => console.log(somaArr(result)))
+//   .catch(onError;
+
+async function asyncFunc() {
+  try {
+    const soma = await promise;
+    const dividedNumb = await divided(soma);
+    await console.log(somaArr(dividedNumb));
+  } catch (error) {
+    onError();
+  }
+}
+asyncFunc();
