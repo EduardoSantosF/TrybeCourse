@@ -1,25 +1,40 @@
-const assert = require('assert');
+const assert = require('assert')
 
-function myRemove(arr, item) {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (item !== arr[i]) {
-      newArr.push(arr[i]);
+const people = [
+    {
+        name: "Nicole",
+        bornIn: 1992,
+        nationality: "Australian"
+    },
+    {
+        name: "Harry",
+        bornIn: 2008,
+        nationality: "Australian"
+    },
+    {
+        name: "Toby",
+        bornIn: 1901,
+        nationality: "Australian"
+    },
+    {
+        name: "Frida",
+        bornIn: 1960,
+        nationality: "Dannish"
+    },
+    {
+        name: "Fernando",
+        bornIn: 2001,
+        nationality: "Brazilian"
     }
-  }
-  return newArr;
-}
+]
 
-// implemente seus testes aqui
-const array = [1, 2, 3, 4];
-// Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado
-assert.deepStrictEqual(myRemove(array, 3), [1, 2, 4]);
+// escreva filterPeople abaixo
+const filterPeople = (people) => 
+  people.filter(({bornIn, nationality}) => nationality === 'Australian' && bornIn < 2001 && bornIn > 1899); 
 
-// Verifique se a chamada myRemove([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]
-assert.notDeepStrictEqual(myRemove(array, 3), array);
+const filteredPeople = filterPeople(people)
 
-// Verifique se o array passado por parâmetro não sofreu alterações
-assert.deepStrictEqual(array, [1, 2, 3, 4]);
 
-// Verifique se a chamada myRemove([1, 2, 3, 4], 5) retorna o array esperado
-assert.deepStrictEqual(myRemove(array, 5), [1, 2, 3, 4]);
+assert.deepEqual(filteredPeople[0], { name: "Nicole", bornIn: 1992, nationality: "Australian" })
+assert.deepEqual(filteredPeople[1], { name: "Toby", bornIn: 1901, nationality: "Australian" })
+    

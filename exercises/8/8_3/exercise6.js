@@ -1,26 +1,13 @@
-const assert = require('assert');
+const assert = require('assert')
 
-function myFizzBuzz(num) {
-  if (typeof num !== 'number') return false;
-  if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
-  if (num % 3 === 0) return 'fizz';
-  if (num % 5 === 0) return 'buzz';
-  return num;
-}
+const palio = ["Palio", "Fiat", 2019]
+const shelbyCobra = ["Shelby Cobra", "Ford", 1963]
+const chiron = ["Chiron", "Bugatti", 2016]
 
-// implemente seus testes aqui
-// Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
-assert.strictEqual(myFizzBuzz(15), 'fizzbuzz');
+// escreva toObject abaixo
+const toObject = ([name, brand, year]) => ({name, brand, year}); 
 
-// Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado
-assert.strictEqual(myFizzBuzz(6), 'fizz');
-
-// Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado
-assert.strictEqual(myFizzBuzz(5), 'buzz');
-
-// Faça uma chamada com um número que não é divisível por 3 ou 5 e verifique se o retorno é o esperado
-assert.strictEqual(myFizzBuzz(16), 16);
-
-// Faça uma chamada com um parâmetro que não é um número e verifique se o retorno é o esperado
-assert.strictEqual(myFizzBuzz("lul"), false);
-
+assert.deepEqual(toObject(palio), { name: "Palio", brand: "Fiat", year: 2019 })
+assert.deepEqual(toObject(shelbyCobra), { name: "Shelby Cobra", brand: "Ford", year: 1963 })
+assert.deepEqual(toObject(chiron), { name: "Chiron", brand: "Bugatti", year: 2016 })
+    

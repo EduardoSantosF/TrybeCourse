@@ -1,6 +1,9 @@
-const assert = require('assert');
+const assert = require('assert')
 
-function thereIs() {}
+// escreva greet abaixo
+const greet = (name, greeting = 'Hi') => `${greeting} ${name}`
 
-// implemente seus testes aqui
-assert.strictEqual(typeof thereIs, 'function');
+assert.equal(greet("John"), "Hi John")
+assert.equal(greet("John", "Good morning"), "Good morning John")
+assert.equal(greet("Isabela", "Oi"), "Oi Isabela")
+    
