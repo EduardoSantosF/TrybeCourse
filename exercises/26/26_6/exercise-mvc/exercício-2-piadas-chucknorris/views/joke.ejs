@@ -9,27 +9,30 @@
 <body>
   <img class="img" src="https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png"
     alt="é ele msm?">
-  <h1 class="joke"><%=value%></h1>
+  <% result.forEach(function(joke) { %>
+  <h1>
+    <%= joke.value %>
+  </h1>
+  <hr>
+  <% }); %>
   <a class="backBtn" href="/categories">Back to categories</a>
 </body>
 <style>
   body {
     background: linear-gradient(45deg, rgb(71, 71, 71) 0%, rgba(255, 255, 255, 1) 15%, rgba(255, 253, 250, 1) 85%, rgba(241, 90, 36, 1) 100%);
+    text-align: center;
   }
 
   .img {
     width: 30%;
-    text-align: center;
   }
 
   .joke {
     color: rgb(46, 46, 46);
     font-size: 3vw;
-    text-align: center;
   }
 
   .backBtn {
-    text-align: center;
     background-color: #F15A24;
     color: white;
     padding: 3px;

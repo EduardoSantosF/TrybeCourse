@@ -6,4 +6,6 @@ const listCategories = async () => ({ categories: (await Axios(categoriesURL)).d
 
 const getJoke = async (category) => (await Axios(`${jokeURL}${category ? `?category=${category}` : ""}`)).data;
 
-module.exports = { listCategories, getJoke };
+const search = async (query) => (await Axios(`https://api.chucknorris.io/jokes/search?query=${query}`)).data;
+
+module.exports = { listCategories, getJoke, search };
