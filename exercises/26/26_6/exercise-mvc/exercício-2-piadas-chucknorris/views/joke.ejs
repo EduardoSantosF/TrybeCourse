@@ -10,10 +10,9 @@
   <img class="img" src="https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png"
     alt="é ele msm?">
   <% result.forEach(function(joke) { %>
-  <h1>
+  <h1 class="joke">
     <%= joke.value %>
   </h1>
-  <hr>
   <% }); %>
   <a class="backBtn" href="/categories">Back to categories</a>
 </body>
@@ -30,6 +29,7 @@
   .joke {
     color: rgb(46, 46, 46);
     font-size: 3vw;
+    margin-bottom: 100px;
   }
 
   .backBtn {
